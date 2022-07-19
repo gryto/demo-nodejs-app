@@ -5,11 +5,11 @@ pipeline {
         AWS_DEFAULT_REGION="us-east-1" 
 	CLUSTER_NAME="nodejs-cluster"
 	SERVICE_NAME="nodejs-container-service"
-	TASK_DEFINITION_NAME="CHANGE_ME"
+	TASK_DEFINITION_NAME="first-run-task-definition"
 	DESIRED_COUNT="1"
-        IMAGE_REPO_NAME="837347870395.dkr.ecr.us-east-1.amazonaws.com/demo"
+        IMAGE_REPO_NAME="demo"
         IMAGE_TAG="${env.BUILD_ID}"
-        REPOSITORY_URI = "${837347870395}.dkr.ecr.${us-east-1}.amazonaws.com/${837347870395.dkr.ecr.us-east-1.amazonaws.com/demo}"
+        REPOSITORY_URI = "${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com/${IMAGE_REPO_NAME}"
 	registryCredential = "	demo-admin-user"
     }
    
